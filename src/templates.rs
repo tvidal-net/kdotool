@@ -13,7 +13,9 @@ function output_debug(message) {
 }
 
 function output_error(message) {
-    print("{{{marker}}} ERROR", message);
+    if (message) {
+        print("{{{marker}}} ERROR", message);
+    }
     callDBus("{{{dbus_addr}}}", "/", "", "error", message.toString());
 }
 

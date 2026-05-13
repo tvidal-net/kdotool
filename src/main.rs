@@ -827,8 +827,7 @@ fn main() -> anyhow::Result<()> {
     }
 
     if errors > 0 {
-        Err(anyhow!("Script finished with {errors} error(s)"))
-    } else {
-        Ok(())
+        std::process::exit(1);
     }
+    Ok(())
 }
